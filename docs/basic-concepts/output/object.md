@@ -24,6 +24,20 @@ this.tell('Hello World!');
 console.log(this.$output);
 ```
 
+If you are reading the logs returned from the server (e.g. AWS CloudWatch), you can use the [`JSON.stringify()`] method to turn the object into a human-readable JSON string response:
+
+```js
+this.tell('Hello World!');
+console.log(JSON.stringify(this.$output, null, 4));
+
+// Output:
+{ 
+    "tell": { 
+        "speech": "Hello World!"
+    } 
+}
+```
+
 The logs for the `$output` object look like this:
 
 ```js
